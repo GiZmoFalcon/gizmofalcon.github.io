@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  background: #341f97;
+}
+
+.glitch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 130px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+.glitch:before, .glitch:after {
+  content: 'GiZmoFalcon';
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.glitch:before {
+  color: #0ff;
+  z-index: -1;
+}
+.glitch:after {
+  color: #f0f;
+  z-index: -2;
+}
+.glitch:hover:before {
+  animation: glitch 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+.glitch:hover:after {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+}
+
+@keyframes glitch {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-5px, 5px);
+    transform: translate(-5px, 5px);
+    transform: skewX(10deg);
+  }
+  40% {
+    -webkit-transform: translate(-5px, -5px);
+    transform: translate(-5px, -5px);
+  }
+  60% {
+    -webkit-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
+  }
+  80% {
+    -webkit-transform: translate(5px, -5px);
+    transform: translate(5px, -5px);
+  }
+  to {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+.shaky{
+  position:relative;
+  width:100%;
+  height:100vh;
+  background:url("./res/demo.html");
+  background-size:cover;
+}
+.shaky:before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:url("./res/demo.html");
+  background-size:cover;
+  opacity:.5;
+}
+.shaky{
+  animation:animate .2s infinite;
+}
+@keyframes animate{
+  0%{
+    background-position: 0 0;
+    filter:hue-rotate(0deg);
+  }
+  10%{
+    background-position: 4px 0;
+  }
+  20%{
+    background-position: -4px 0;
+  }
+  30%{
+    background-position: 12px 0;
+  }
+  40%{
+    background-position: -16px 0;
+  }
+  50%{
+    background-position: -24px 0;
+  }
+  60%{
+    background-position: -52px 0;
+  }
+  70%{
+    background-position: 0 22px;
+  }
+  80%{
+    background-position: -40px -10px;
+  }
+  100%{
+    background-position: 0 0;
+    filter:hue-rotate(360deg);
+  }
+}
+.shaky:hover{
+  -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+     animation-play-state: paused;
+}
